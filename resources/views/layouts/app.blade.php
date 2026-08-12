@@ -2,21 +2,20 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- Isi title yang kita kirimkan dari views lain -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <!-- memanggil link bootstraps -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid p-0">
 
     @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success m-3">
             {{ session('success') }}
         </div>
     @endif
-    <!-- Isi konten yang kita kirimkan dari views lain -->
+
     @yield('content')
 
 </div>
