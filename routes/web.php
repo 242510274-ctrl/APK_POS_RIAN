@@ -6,6 +6,7 @@ use App\Http\Controllers\ItemPenjualanController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\JenisController;
 
 // Route untuk guest (belum login)
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -24,6 +25,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('users.edit');
         Route::post('/users/update/{user}', [UserController::class, 'update'])->name('users.update');
         Route::delete('/users/destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    });
+
+    // Route khusus admin untuk Jenis
+    Route::middleware('role:admin')->group(function () {
+        Route::resource('jenis', JenisController::class)
+            ->except(['show']);
     });
 
     // Route untuk admin dan kasir

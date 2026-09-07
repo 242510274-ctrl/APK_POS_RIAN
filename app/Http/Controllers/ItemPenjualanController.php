@@ -7,7 +7,7 @@ use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PenjualanController extends Controller
+class ItemPenjualanController extends Controller
 {
     /**
      * Halaman POS untuk TRANSAKSI BARU (Keranjang Harus Kosong)

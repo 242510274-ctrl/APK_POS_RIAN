@@ -30,6 +30,15 @@
                     </a>
                 </li>
 
+               
+    <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded-pill fs-7 fw-medium text-white-50 text-white-hover {{ Request::is('jenis*') ? 'active bg-white bg-opacity-10 text-white fw-semibold border border-white border-opacity-10' : '' }}"
+           href="{{ route('jenis.index') }}">
+            <i class="bi bi-tags me-1.5"></i> Jenis
+        </a>
+    </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link px-3 py-2 rounded-pill fs-7 fw-medium text-white-50 text-white-hover {{ Request::is('produk*') ? 'active bg-white bg-opacity-10 text-white fw-semibold border border-white border-opacity-10' : '' }}" 
                        href="{{ route('produk.index') }}">
